@@ -26,7 +26,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* Menü için konumlandırma */
+    position: relative;
 }
 
 .logo {
@@ -58,7 +58,7 @@ body {
 
 /* Menü Butonu */
 .menu-toggle {
-    display: none; /* Masaüstünde gizle */
+    display: none;
     font-size: 2rem;
     background: none;
     border: none;
@@ -86,10 +86,11 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; /* Arka plan katmanı */
 }
 
 .banner-content {
-    z-index: 1;
+    z-index: 2; /* İçerik katmanı */
 }
 
 .banner h1 {
@@ -143,12 +144,12 @@ body {
 @media (max-width: 768px) {
     /* Header */
     .header .container {
-        flex-direction: row; /* Tekrar aynı satıra al */
+        flex-direction: row;
         justify-content: space-between;
     }
 
     .navbar {
-        display: none; /* Menüyü gizle */
+        display: none;
         flex-direction: column;
         width: 100%;
         text-align: left;
@@ -157,6 +158,7 @@ body {
         top: 100%;
         left: 0;
         border-top: 1px solid #e0e0e0;
+        z-index: 1000; /* Menüyü en öne getir */
     }
 
     .navbar ul {
@@ -175,11 +177,11 @@ body {
     }
     
     .menu-toggle {
-        display: block; /* Mobil cihazda göster */
+        display: block;
     }
 
     .navbar.active {
-        display: flex; /* Aktif olduğunda menüyü göster */
+        display: flex;
     }
 
     /* Banner */
