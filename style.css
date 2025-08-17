@@ -18,7 +18,7 @@ body {
 .header {
     background: #fff;
     color: #333;
-    padding: 1rem 0;
+    padding: 1.5rem 0; /* Boşluğu artır */
     border-bottom: 3px solid #e0e0e0;
 }
 
@@ -29,7 +29,7 @@ body {
 }
 
 .logo {
-    height: 50px;
+    height: 60px; /* Logo boyutunu büyüt */
 }
 
 .navbar ul {
@@ -40,13 +40,14 @@ body {
 }
 
 .navbar ul li {
-    margin-left: 20px;
+    margin-left: 25px; /* Menü elemanları arasındaki boşluğu artır */
 }
 
 .navbar ul li a {
     color: #333;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.1rem; /* Yazı boyutunu büyüt */
     transition: color 0.3s ease;
 }
 
@@ -131,13 +132,17 @@ body {
 @media (max-width: 768px) {
     /* Genel ayarlar */
     .container {
-        padding: 0 15px; /* Yan boşlukları azalt */
+        padding: 0 15px;
     }
 
     /* Üst menü */
     .header .container {
         flex-direction: column;
         text-align: center;
+    }
+
+    .logo {
+        height: 50px; /* Mobil için logo boyutunu biraz küçült */
     }
 
     .navbar ul {
@@ -149,8 +154,8 @@ body {
         margin: 5px 0;
     }
     
-    .logo {
-        height: 40px;
+    .navbar ul li a {
+        font-size: 1rem; /* Mobil için menü yazı boyutunu ayarla */
     }
 
     /* Banner */
