@@ -126,3 +126,62 @@ body {
     text-align: center;
     padding: 20px 0;
 }
+
+/* Mobil Uyumlu Tasarım için Ek Kurallar */
+@media (max-width: 768px) {
+    /* Genel ayarlar */
+    .container {
+        padding: 0 15px; /* Yan boşlukları azalt */
+    }
+
+    /* Üst menü */
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
+    }
+    
+    .logo {
+        height: 40px;
+    }
+
+    /* Banner */
+    .banner {
+        height: 75vh;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    /* Bölümler */
+    .section {
+        padding: 40px 0;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Footer */
+    .footer p {
+        font-size: 0.8rem;
+    }
+}
