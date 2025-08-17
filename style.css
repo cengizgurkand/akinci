@@ -18,7 +18,7 @@ body {
 .header {
     background: #fff;
     color: #333;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     border-bottom: 3px solid #e0e0e0;
 }
 
@@ -26,10 +26,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Menü için konumlandırma */
 }
 
 .logo {
-    height: 50px;
+    height: 60px;
 }
 
 .navbar ul {
@@ -40,18 +41,29 @@ body {
 }
 
 .navbar ul li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 .navbar ul li a {
     color: #333;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.1rem;
     transition: color 0.3s ease;
 }
 
 .navbar ul li a:hover {
     color: #d11a2d;
+}
+
+/* Menü Butonu */
+.menu-toggle {
+    display: none; /* Masaüstünde gizle */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
 }
 
 /* Banner */
@@ -127,30 +139,47 @@ body {
     padding: 20px 0;
 }
 
-/* Mobil Uyumlu Tasarım için Ek Kurallar */
+/* Mobil Uyumlu Tasarım */
 @media (max-width: 768px) {
-    /* Genel ayarlar */
-    .container {
-        padding: 0 15px; /* Yan boşlukları azalt */
+    /* Header */
+    .header .container {
+        flex-direction: row; /* Tekrar aynı satıra al */
+        justify-content: space-between;
     }
 
-    /* Üst menü */
-    .header .container {
+    .navbar {
+        display: none; /* Menüyü gizle */
         flex-direction: column;
-        text-align: center;
+        width: 100%;
+        text-align: left;
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        border-top: 1px solid #e0e0e0;
     }
 
     .navbar ul {
         flex-direction: column;
-        margin-top: 15px;
+        padding: 10px 0;
     }
 
     .navbar ul li {
-        margin: 5px 0;
+        margin: 0;
+    }
+
+    .navbar ul li a {
+        display: block;
+        padding: 10px 20px;
+        border-bottom: 1px solid #f4f4f4;
     }
     
-    .logo {
-        height: 40px;
+    .menu-toggle {
+        display: block; /* Mobil cihazda göster */
+    }
+
+    .navbar.active {
+        display: flex; /* Aktif olduğunda menüyü göster */
     }
 
     /* Banner */
@@ -164,24 +193,5 @@ body {
 
     .banner p {
         font-size: 1.1rem;
-    }
-
-    .btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-
-    /* Bölümler */
-    .section {
-        padding: 40px 0;
-    }
-
-    .section h2 {
-        font-size: 1.8rem;
-    }
-
-    /* Footer */
-    .footer p {
-        font-size: 0.8rem;
     }
 }
